@@ -68,10 +68,13 @@ class JournalEntry extends HTMLElement {
    * https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/set
    */
   set entry(entry) {
+    console.log(entry);
     /* 
      * TODO: set the entry title, date, and content fields in this component
      */
+    // const set title =  {
     
+    // }
     // CODE GOES HERE
 
     if (entry.image) {

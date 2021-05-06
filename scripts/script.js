@@ -16,20 +16,19 @@ document.addEventListener('DOMContentLoaded', () => {
    * the current entry for each journal-entry element.
    */
 
-  let url = ""  // SET URL 
-
+  let url = "https://cse110lab6.herokuapp.com/entries";  // SET URL 
+  // date, title, content, image, and source
   fetch(url)
-    .then( /* FILL IN RESPONSE HANDLING HERE */ )
+    .then(response => response.json())
     .then(entries => {
+      console.log(entries);
       entries.forEach((entry) => {
-       
+        // console.log(entry.date);
         let newPost;  
 
 
         // CODE GOES HERE vvv
-        
-
-
+         
 
 
 

@@ -8,7 +8,7 @@ window.logCheckpoints = true // set to true/false to add/remove checkpoint logs 
 // script.js
 
 document.addEventListener('DOMContentLoaded', () => {
-  /* TODO:
+  /* 
    * 1. fetch json results from https://cse110lab6.herokuapp.com/entries
    * 2. for each entry, create and append a custom HTML element 
    *    using a web component called JournalEntry to a 
@@ -24,18 +24,11 @@ document.addEventListener('DOMContentLoaded', () => {
     .then(response => response.json())
     .then(entries => {
 
-      // LIFEHACK: If attach to shadow: use this to print to page
-      // let shadow = document.querySelector("main").attachShadow({mode: "closed"});
       entries.forEach((entry) => {
-        // console.log(entry.date);
         let newPost = new JournalEntry();
         console.log(newPost);
 
         newPost.entry = entry;
-
-        
-        // LIFEHACK: If attach to shadow: use this to print to page
-        // shadow.appendChild(newPost);
 
         document.querySelector("main").appendChild(newPost);
 

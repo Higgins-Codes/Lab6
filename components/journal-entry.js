@@ -68,11 +68,9 @@ class JournalEntry extends HTMLElement {
    * https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/set
    */
   set entry(entry) {
-    console.log(entry);
     /* 
-     * TODO: set the entry title, date, and content fields in this component
+     * Set the entry title, date, and content fields in this component
      */
-    // CODE GOES HERE
     this.shadowRoot.querySelector(".entry-title").innerHTML = entry.title;
     this.shadowRoot.querySelector(".entry-date").innerHTML = entry.date;
     this.shadowRoot.querySelector(".entry-content").innerHTML = entry.content;
@@ -90,19 +88,16 @@ class JournalEntry extends HTMLElement {
     if (entry.image) {
       let entryImage;
       /*
-       * TODO: if the entry contains an image resource,
+       * If the entry contains an image resource,
        * 1. create an image element with the correct class
        * 2. set the image src and alt attributes
        * 3. append the image element to the appropriate location in this component
        */
-
-      // CODE GOES HERE vvv
-
-
-
-
-
-      // CODE GOES HERE ^^^
+      entryImage = document.createElement("img");
+      entryImage.setAttribute("class", "entry-image");
+      entryImage.setAttribute("src", entry.image.src);
+      entryImage.alt = entry.image.alt;
+      this.shadowRoot.querySelector("article").appendChild(entryImage);
 
       /* ------------- do not edit this code, it is for your debugging purposes ------------- */
       try {
@@ -116,22 +111,17 @@ class JournalEntry extends HTMLElement {
     if (entry.audio) {
       let entryAudio;
       /*
-       * TODO: if the entry contains an audio resource,
+       * If the entry contains an audio resource,
        * 1. create an audio element with the correct class
        * 2. set the audio src and enable audio controls
        * 3. append the audio element to the appropriate location in this component
        */
 
-      // CODE GOES HERE vvv
-
-
-
-
-
-
-      // CODE GOES HERE ^^^
-      
-
+      entryAudio = document.createElement("audio");
+      entryAudio.setAttribute("class", "entry-audio");
+      entryAudio.setAttribute("src", entry.audio);
+      entryAudio.setAttribute("controls", "");
+      this.shadowRoot.querySelector("article").appendChild(entryAudio);
       
       /* ------------- do not edit this code, it is for your debugging purposes ------------- */
       try {

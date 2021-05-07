@@ -72,10 +72,20 @@ class JournalEntry extends HTMLElement {
     /* 
      * TODO: set the entry title, date, and content fields in this component
      */
-    // const set title =  {
-    
-    // }
     // CODE GOES HERE
+    this.shadowRoot.querySelector(".entry-title").innerHTML = entry.title;
+    this.shadowRoot.querySelector(".entry-date").innerHTML = entry.date;
+    this.shadowRoot.querySelector(".entry-content").innerHTML = entry.content;
+    
+  //   <template>
+  //   <article class="entry">
+  //     <h2 class="entry-title">Template Title</h2>
+  //     <p class="entry-date">mm/dd/yyyy</p>
+  //     <p class="entry-content">blah blah blah...</p>
+  //     <img src="" alt="Some Image" class="entry-image" />
+  //     <audio src="" controls class="entry-audio"></audio>
+  //   </article>
+  // </template>
 
     if (entry.image) {
       let entryImage;
@@ -198,3 +208,5 @@ window.logCheckpoint = (task, example, value) => {
   console.log(sectionBreak, contentStyle);
 }
 /* ------------- do not edit this code, it is for your debugging purposes ------------- */
+
+export { JournalEntry };

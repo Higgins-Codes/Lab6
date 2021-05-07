@@ -1,5 +1,7 @@
 // script.js
 
+import { JournalEntry } from "../components/journal-entry.js";
+
 window.logCheckpoints = true // set to true/false to add/remove checkpoint logs to clear room for your own debugging
 
 
@@ -21,22 +23,21 @@ document.addEventListener('DOMContentLoaded', () => {
   fetch(url)
     .then(response => response.json())
     .then(entries => {
-      console.log(entries);
+
+      // LIFEHACK: If attach to shadow: use this to print to page
+      // let shadow = document.querySelector("main").attachShadow({mode: "closed"});
       entries.forEach((entry) => {
         // console.log(entry.date);
-        let newPost;  
+        let newPost = new JournalEntry();
+        console.log(newPost);
 
+        newPost.entry = entry;
 
-        // CODE GOES HERE vvv
-         
+        
+        // LIFEHACK: If attach to shadow: use this to print to page
+        // shadow.appendChild(newPost);
 
-
-
-
-
-        // CODE GOES HERE ^^^
-
-
+        document.querySelector("main").appendChild(newPost);
 
         /* ------------- do not edit this code, it is for your debugging purposes ------------- */
         try {
